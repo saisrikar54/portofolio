@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,1007 +6,1028 @@
 
     <title>Sai Srikar Cheruku | Portfolio</title>
 
-    <meta
-        name="description"
-        content="Portfolio of Sai Srikar Cheruku - B.Tech student, programmer and aspiring software developer."
-    >
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    <link rel="stylesheet" href="style.css">
+        html {
+            scroll-behavior: smooth;
+        }
 
-    <!-- Google Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet"
-    >
+        body {
+            font-family: Arial, sans-serif;
+            background: #07111f;
+            color: white;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* NAVBAR */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 18px 8%;
+
+            background: rgba(7, 17, 31, 0.95);
+            border-bottom: 1px solid #1d334d;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            color: #00d9ff;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: #d9e4ef;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #00d9ff;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 90vh;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            gap: 50px;
+
+            padding: 80px 8%;
+
+            background:
+                radial-gradient(
+                    circle at 80% 30%,
+                    rgba(0, 217, 255, 0.15),
+                    transparent 35%
+                );
+        }
+
+        .hero-text {
+            max-width: 700px;
+        }
+
+        .hello {
+            color: #00d9ff;
+            font-size: 18px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .hero h1 {
+            margin-top: 10px;
+
+            font-size: clamp(45px, 7vw, 80px);
+            line-height: 1.05;
+        }
+
+        .hero h1 span {
+            color: #00d9ff;
+        }
+
+        .hero h2 {
+            margin-top: 20px;
+
+            color: #c4d0dc;
+            font-size: 25px;
+        }
+
+        .hero p {
+            margin-top: 20px;
+
+            max-width: 650px;
+
+            color: #9eacbb;
+            font-size: 17px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+
+            margin-top: 30px;
+        }
+
+        .button {
+            padding: 13px 22px;
+
+            border-radius: 6px;
+
+            font-weight: bold;
+
+            border: 1px solid #00d9ff;
+
+            transition: 0.3s;
+        }
+
+        .primary {
+            background: #00d9ff;
+            color: #06111c;
+        }
+
+        .secondary {
+            color: #00d9ff;
+        }
+
+        .button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 217, 255, 0.2);
+        }
+
+        /* PROFILE CARD */
+
+        .profile {
+            width: 330px;
+
+            padding: 35px;
+
+            text-align: center;
+
+            border: 1px solid #24415d;
+            border-radius: 20px;
+
+            background: #0d1b2b;
+
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+        }
+
+        .avatar {
+            width: 120px;
+            height: 120px;
+
+            margin: auto;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            border-radius: 50%;
+
+            background: #00d9ff;
+            color: #06111c;
+
+            font-size: 38px;
+            font-weight: bold;
+        }
+
+        .profile h3 {
+            margin-top: 20px;
+            font-size: 22px;
+        }
+
+        .profile p {
+            color: #8fa4b8;
+            font-size: 14px;
+        }
+
+        /* SECTIONS */
+
+        section:not(.hero) {
+            padding: 90px 8%;
+        }
+
+        .dark {
+            background: #0a1625;
+        }
+
+        .section-title {
+            margin-bottom: 45px;
+        }
+
+        .section-title small {
+            color: #00d9ff;
+
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .section-title h2 {
+            margin-top: 8px;
+            font-size: 42px;
+        }
+
+        .section-title h2 span {
+            color: #00d9ff;
+        }
+
+        /* ABOUT */
+
+        .about {
+            max-width: 900px;
+        }
+
+        .about p {
+            margin-bottom: 18px;
+
+            color: #a9b7c5;
+
+            font-size: 16px;
+        }
+
+        /* SKILLS */
+
+        .skills {
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(180px, 1fr));
+
+            gap: 18px;
+        }
+
+        .skill {
+            padding: 25px;
+
+            text-align: center;
+
+            background: #101f31;
+
+            border: 1px solid #203b55;
+
+            border-radius: 12px;
+
+            transition: 0.3s;
+        }
+
+        .skill:hover {
+            transform: translateY(-5px);
+
+            border-color: #00d9ff;
+        }
+
+        .skill h3 {
+            color: #00d9ff;
+            font-size: 22px;
+        }
+
+        .skill p {
+            margin-top: 8px;
+
+            color: #8fa4b8;
+            font-size: 13px;
+        }
+
+        /* EDUCATION */
+
+        .education {
+            display: grid;
+
+            gap: 20px;
+
+            max-width: 900px;
+        }
+
+        .education-card {
+            padding: 25px;
+
+            background: #101f31;
+
+            border-left: 4px solid #00d9ff;
+
+            border-radius: 8px;
+        }
+
+        .education-card span {
+            color: #00d9ff;
+
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .education-card h3 {
+            margin-top: 5px;
+            font-size: 22px;
+        }
+
+        .education-card p {
+            margin-top: 5px;
+
+            color: #9eacbb;
+        }
+
+        /* ACHIEVEMENTS */
+
+        .achievement {
+            max-width: 900px;
+
+            padding: 30px;
+
+            background: #101f31;
+
+            border: 1px solid #203b55;
+
+            border-radius: 12px;
+        }
+
+        .achievement h3 {
+            color: #00d9ff;
+            font-size: 25px;
+        }
+
+        .achievement p {
+            margin-top: 10px;
+            color: #a9b7c5;
+        }
+
+        /* WORKSHOPS */
+
+        .workshops {
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(280px, 1fr));
+
+            gap: 20px;
+        }
+
+        .workshop {
+            padding: 30px;
+
+            background: #101f31;
+
+            border: 1px solid #203b55;
+
+            border-radius: 12px;
+        }
+
+        .workshop h3 {
+            color: #00d9ff;
+            font-size: 22px;
+        }
+
+        .workshop p {
+            margin-top: 10px;
+            color: #9eacbb;
+        }
+
+        /* PROJECT */
+
+        .project {
+            max-width: 1000px;
+
+            padding: 35px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #10243a,
+                    #0d1928
+                );
+
+            border: 1px solid #28506e;
+
+            border-radius: 15px;
+        }
+
+        .project-label {
+            color: #00d9ff;
+
+            font-size: 13px;
+            font-weight: bold;
+
+            letter-spacing: 2px;
+        }
+
+        .project h3 {
+            margin-top: 8px;
+
+            font-size: 38px;
+        }
+
+        .project p {
+            margin-top: 15px;
+
+            color: #a9b7c5;
+            font-size: 16px;
+        }
+
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+
+            gap: 10px;
+
+            margin-top: 20px;
+        }
+
+        .features span {
+            padding: 7px 12px;
+
+            border: 1px solid #31536d;
+
+            border-radius: 20px;
+
+            color: #b9c8d6;
+
+            font-size: 12px;
+        }
+
+        /* CONTACT */
+
+        .contact {
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(280px, 1fr));
+
+            gap: 30px;
+        }
+
+        .contact-card {
+            padding: 30px;
+
+            background: #101f31;
+
+            border: 1px solid #203b55;
+
+            border-radius: 12px;
+        }
+
+        .contact-card h3 {
+            color: #00d9ff;
+        }
+
+        .contact-card p {
+            margin-top: 10px;
+            color: #a9b7c5;
+        }
+
+        .contact-link {
+            display: block;
+
+            margin-top: 15px;
+
+            color: #00d9ff;
+
+            word-break: break-word;
+        }
+
+        /* FOOTER */
+
+        footer {
+            padding: 30px 8%;
+
+            text-align: center;
+
+            background: #050c15;
+
+            border-top: 1px solid #1d334d;
+
+            color: #73879a;
+        }
+
+        footer strong {
+            color: #00d9ff;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 800px) {
+
+            nav {
+                padding: 15px 5%;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            .hero {
+                flex-direction: column;
+
+                text-align: center;
+
+                padding: 70px 5%;
+            }
+
+            .hero p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .buttons {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .profile {
+                width: 100%;
+                max-width: 330px;
+            }
+
+            section:not(.hero) {
+                padding: 70px 5%;
+            }
+
+            .section-title h2 {
+                font-size: 34px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-    <!-- =========================
-         NAVIGATION
-    ========================== -->
+    <!-- NAVIGATION -->
 
-    <header class="header" id="header">
+    <nav>
 
-        <nav class="navbar">
+        <div class="logo">
+            Sai.
+        </div>
 
-            <a href="#home" class="logo">
-                Sai<span>.</span>
-            </a>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#achievements">Achievements</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
 
-            <button
-                class="menu-toggle"
-                id="menuToggle"
-                aria-label="Open navigation menu"
-                aria-expanded="false"
-            >
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-
-            <ul class="nav-links" id="navLinks">
-
-                <li>
-                    <a href="#home" class="nav-link active">Home</a>
-                </li>
-
-                <li>
-                    <a href="#about" class="nav-link">About</a>
-                </li>
-
-                <li>
-                    <a href="#skills" class="nav-link">Skills</a>
-                </li>
-
-                <li>
-                    <a href="#education" class="nav-link">Education</a>
-                </li>
-
-                <li>
-                    <a href="#achievements" class="nav-link">Achievements</a>
-                </li>
-
-                <li>
-                    <a href="#projects" class="nav-link">Projects</a>
-                </li>
-
-                <li>
-                    <a href="#contact" class="nav-link">Contact</a>
-                </li>
-
-            </ul>
-
-            <a href="#contact" class="nav-button">
-                Let's Talk
-            </a>
-
-        </nav>
-
-    </header>
+    </nav>
 
 
-    <main>
+    <!-- HERO -->
 
-        <!-- =========================
-             HERO
-        ========================== -->
+    <section class="hero" id="home">
 
-        <section class="hero section" id="home">
+        <div class="hero-text">
 
-            <div class="hero-content reveal">
-
-                <div class="available">
-                    <span class="available-dot"></span>
-                    Open to learning & opportunities
-                </div>
-
-                <p class="hero-small">
-                    HELLO, I'M
-                </p>
-
-                <h1>
-                    Sai Srikar
-                    <span>Cheruku</span>
-                </h1>
-
-                <h2>
-                    B.Tech Student &
-                    <span id="typingText">Aspiring Software Developer</span>
-                </h2>
-
-                <p class="hero-description">
-                    I am a passionate B.Tech student interested in
-                    programming, web development and emerging
-                    technologies. I enjoy learning, building projects
-                    and solving real-world problems through technology.
-                </p>
-
-                <div class="hero-buttons">
-
-                    <a href="#projects" class="btn btn-primary">
-                        View My Work
-                        <span>↗</span>
-                    </a>
-
-                    <a
-                        href="https://github.com/saisrikar54"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="btn btn-outline"
-                    >
-                        GitHub
-                        <span>↗</span>
-                    </a>
-
-                </div>
-
-                <div class="social-links">
-
-                    <a
-                        href="https://github.com/saisrikar54"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="GitHub"
-                    >
-                        GH
-                    </a>
-
-                    <a
-                        href="https://www.linkedin.com/in/saisrikar-cheruku-355284367"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="LinkedIn"
-                    >
-                        in
-                    </a>
-
-                </div>
-
+            <div class="hello">
+                HELLO, I'M
             </div>
 
-
-            <div class="hero-visual reveal">
-
-                <div class="visual-glow"></div>
-
-                <div class="profile-card">
-
-                    <div class="profile-top">
-
-                        <div class="profile-avatar">
-                            SC
-                        </div>
-
-                        <div class="profile-status">
-                            <span></span>
-                            Developer
-                        </div>
-
-                    </div>
-
-                    <h3>
-                        Sai Srikar Cheruku
-                    </h3>
-
-                    <p>
-                        Java • Python • C • Web Development
-                    </p>
-
-                    <div class="code-window">
-
-                        <div class="code-header">
-
-                            <div class="code-dots">
-                                <i></i>
-                                <i></i>
-                                <i></i>
-                            </div>
-
-                            <span>developer.js</span>
-
-                        </div>
-
-                        <div class="code-content">
-
-                            <p>
-                                <span class="purple">const</span>
-                                developer =
-                                <span class="yellow">{</span>
-                            </p>
-
-                            <p class="indent">
-                                name:
-                                <span class="green">
-                                    "Sai Srikar"
-                                </span>,
-                            </p>
-
-                            <p class="indent">
-                                role:
-                                <span class="green">
-                                    "Developer"
-                                </span>,
-                            </p>
-
-                            <p class="indent">
-                                passion:
-                                <span class="green">
-                                    "Coding"
-                                </span>,
-                            </p>
-
-                            <p class="indent">
-                                goal:
-                                <span class="green">
-                                    "Keep Learning"
-                                </span>
-                            </p>
-
-                            <p>
-                                <span class="yellow">}</span>;
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <div class="floating-card floating-one">
-                    <strong>5+</strong>
-                    <small>Skills</small>
-                </div>
-
-                <div class="floating-card floating-two">
-                    <strong>2026</strong>
-                    <small>SIH</small>
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             ABOUT
-        ========================== -->
-
-        <section class="section about-section" id="about">
-
-            <div class="section-heading reveal">
-
-                <p>GET TO KNOW ME</p>
-
-                <h2>
-                    About <span>Me</span>
-                </h2>
-
-            </div>
-
-            <div class="about-grid">
-
-                <div class="about-content reveal">
-
-                    <span class="section-number">
-                        01 / ABOUT
-                    </span>
-
-                    <h3>
-                        Building my skills,
-                        one line of code at a time.
-                    </h3>
-
-                    <p>
-                        I am Sai Srikar Cheruku, currently pursuing
-                        B.Tech at Malla Reddy College of Engineering.
-                        I have a strong interest in programming,
-                        software development and web technologies.
-                    </p>
-
-                    <p>
-                        I work with Java, C, Python, HTML and CSS.
-                        I believe in continuously improving my
-                        technical knowledge through practical
-                        projects, workshops and competitions.
-                    </p>
-
-                    <p>
-                        My goal is to become a skilled software
-                        developer and contribute to meaningful
-                        technology solutions.
-                    </p>
-
-                </div>
-
-
-                <div class="about-cards reveal">
-
-                    <div class="info-card">
-
-                        <div class="info-icon">
-                            🎓
-                        </div>
-
-                        <div>
-                            <span>Currently</span>
-                            <h4>B.Tech Student</h4>
-                            <p>
-                                Malla Reddy College of Engineering
-                            </p>
-                        </div>
-
-                    </div>
-
-
-                    <div class="info-card">
-
-                        <div class="info-icon">
-                            💻
-                        </div>
-
-                        <div>
-                            <span>Interested In</span>
-                            <h4>Software Development</h4>
-                            <p>
-                                Programming & Web Technologies
-                            </p>
-                        </div>
-
-                    </div>
-
-
-                    <div class="info-card">
-
-                        <div class="info-icon">
-                            🚀
-                        </div>
-
-                        <div>
-                            <span>Focus</span>
-                            <h4>Learn • Build • Improve</h4>
-                            <p>
-                                Developing practical skills
-                            </p>
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             SKILLS
-        ========================== -->
-
-        <section class="section dark-section" id="skills">
-
-            <div class="section-heading reveal">
-
-                <p>WHAT I WORK WITH</p>
-
-                <h2>
-                    My <span>Skills</span>
-                </h2>
-
-            </div>
-
-            <div class="skills-grid">
-
-                <div class="skill-card reveal">
-
-                    <div class="skill-number">
-                        01
-                    </div>
-
-                    <div class="skill-icon">
-                        ☕
-                    </div>
-
-                    <h3>Java</h3>
-
-                    <p>
-                        Object-oriented programming and
-                        application development.
-                    </p>
-
-                    <div class="skill-level">
-                        <span></span>
-                    </div>
-
-                </div>
-
-
-                <div class="skill-card reveal">
-
-                    <div class="skill-number">
-                        02
-                    </div>
-
-                    <div class="skill-icon c-icon">
-                        C
-                    </div>
-
-                    <h3>C Programming</h3>
-
-                    <p>
-                        Programming fundamentals, logic
-                        and problem solving.
-                    </p>
-
-                    <div class="skill-level">
-                        <span></span>
-                    </div>
-
-                </div>
-
-
-                <div class="skill-card reveal">
-
-                    <div class="skill-number">
-                        03
-                    </div>
-
-                    <div class="skill-icon">
-                        🐍
-                    </div>
-
-                    <h3>Python</h3>
-
-                    <p>
-                        Programming, automation and
-                        problem solving.
-                    </p>
-
-                    <div class="skill-level">
-                        <span></span>
-                    </div>
-
-                </div>
-
-
-                <div class="skill-card reveal">
-
-                    <div class="skill-number">
-                        04
-                    </div>
-
-                    <div class="skill-icon code-icon">
-                        &lt;/&gt;
-                    </div>
-
-                    <h3>HTML</h3>
-
-                    <p>
-                        Creating structured and responsive
-                        web pages.
-                    </p>
-
-                    <div class="skill-level">
-                        <span></span>
-                    </div>
-
-                </div>
-
-
-                <div class="skill-card reveal">
-
-                    <div class="skill-number">
-                        05
-                    </div>
-
-                    <div class="skill-icon">
-                        🎨
-                    </div>
-
-                    <h3>CSS</h3>
-
-                    <p>
-                        Designing modern and responsive
-                        user interfaces.
-                    </p>
-
-                    <div class="skill-level">
-                        <span></span>
-                    </div>
-
-                </div>
-
-
-                <div class="skill-card skill-more reveal">
-
-                    <div class="skill-number">
-                        +
-                    </div>
-
-                    <div class="skill-icon">
-                        🚀
-                    </div>
-
-                    <h3>Always Learning</h3>
-
-                    <p>
-                        Exploring new technologies and
-                        improving my development skills.
-                    </p>
-
-                    <div class="skill-level">
-                        <span></span>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             EDUCATION
-        ========================== -->
-
-        <section class="section" id="education">
-
-            <div class="section-heading reveal">
-
-                <p>MY ACADEMIC JOURNEY</p>
-
-                <h2>
-                    Education
-                </h2>
-
-            </div>
-
-            <div class="timeline">
-
-                <div class="timeline-line"></div>
-
-
-                <div class="timeline-item reveal">
-
-                    <div class="timeline-dot"></div>
-
-                    <div class="timeline-year">
-                        10th
-                    </div>
-
-                    <div class="timeline-content">
-
-                        <span>Secondary Education</span>
-
-                        <h3>
-                            Sri Chaitanya
-                        </h3>
-
-                        <p>
-                            Completed my 10th standard at
-                            Sri Chaitanya.
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <div class="timeline-item reveal">
-
-                    <div class="timeline-dot"></div>
-
-                    <div class="timeline-year">
-                        Intermediate
-                    </div>
-
-                    <div class="timeline-content">
-
-                        <span>Higher Secondary Education</span>
-
-                        <h3>
-                            Sri Chaitanya Junior College
-                        </h3>
-
-                        <p>
-                            Completed my intermediate education
-                            at Sri Chaitanya Junior College.
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <div class="timeline-item reveal">
-
-                    <div class="timeline-dot"></div>
-
-                    <div class="timeline-year">
-                        Present
-                    </div>
-
-                    <div class="timeline-content">
-
-                        <span>B.Tech</span>
-
-                        <h3>
-                            Malla Reddy College of Engineering
-                        </h3>
-
-                        <p>
-                            Currently pursuing B.Tech and
-                            developing my skills in programming,
-                            software development and technology.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             ACHIEVEMENTS
-        ========================== -->
-
-        <section class="section dark-section" id="achievements">
-
-            <div class="section-heading reveal">
-
-                <p>MY HIGHLIGHTS</p>
-
-                <h2>
-                    Achievements
-                </h2>
-
-            </div>
-
-            <div class="achievement-grid">
-
-                <article class="achievement-card reveal">
-
-                    <div class="achievement-icon">
-                        🏆
-                    </div>
-
-                    <div class="achievement-content">
-
-                        <span>
-                            SIH 2026
-                        </span>
-
-                        <h3>
-                            SIH Internal Winner
-                        </h3>
-
-                        <p>
-                            Won the Smart India Hackathon internal
-                            competition at Malla Reddy College of
-                            Engineering in 2026.
-                        </p>
-
-                    </div>
-
-                    <div class="achievement-arrow">
-                        ↗
-                    </div>
-
-                </article>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             WORKSHOPS
-        ========================== -->
-
-        <section class="section">
-
-            <div class="section-heading reveal">
-
-                <p>LEARNING & DEVELOPMENT</p>
-
-                <h2>
-                    Workshops
-                </h2>
-
-            </div>
-
-            <div class="workshop-grid">
-
-                <article class="workshop-card reveal">
-
-                    <div class="workshop-top">
-                        <span>01</span>
-                        <span>Workshop</span>
-                    </div>
-
-                    <div class="workshop-icon">
-                        GH
-                    </div>
-
-                    <h3>
-                        GitHub Workshop
-                    </h3>
-
-                    <p>
-                        Completed a GitHub workshop in college
-                        and learned the fundamentals of Git,
-                        GitHub and version control.
-                    </p>
-
-                    <div class="workshop-footer">
-                        <span>Git</span>
-                        <span>GitHub</span>
-                        <span>Version Control</span>
-                    </div>
-
-                </article>
-
-
-                <article class="workshop-card reveal">
-
-                    <div class="workshop-top">
-                        <span>02</span>
-                        <span>Event</span>
-                    </div>
-
-                    <div class="workshop-icon">
-                        WC
-                    </div>
-
-                    <h3>
-                        Workshop Carnival
-                    </h3>
-
-                    <p>
-                        Attended Workshop Carnival to explore
-                        technical concepts and gain practical
-                        knowledge.
-                    </p>
-
-                    <div class="workshop-footer">
-                        <span>Learning</span>
-                        <span>Technology</span>
-                        <span>Networking</span>
-                    </div>
-
-                </article>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             PROJECTS
-        ========================== -->
-
-        <section class="section dark-section" id="projects">
-
-            <div class="section-heading reveal">
-
-                <p>WHAT I'M WORKING ON</p>
-
-                <h2>
-                    Featured <span>Project</span>
-                </h2>
-
-            </div>
-
-            <article class="project-card reveal">
-
-                <div class="project-number">
-                    01
-                </div>
-
-                <div class="project-main">
-
-                    <div class="project-label">
-                        SIH 2026
-                    </div>
-
-                    <h3>
-                        FASALFORECAST
-                    </h3>
-
-                    <p>
-                        A localized agricultural weather forecasting
-                        solution designed to provide farmers with
-                        useful weather insights, crop-specific risks
-                        and weather-based advisories.
-                    </p>
-
-                    <div class="project-features">
-
-                        <span>
-                            Localized Weather
-                        </span>
-
-                        <span>
-                            Crop Risk
-                        </span>
-
-                        <span>
-                            Farmer Alerts
-                        </span>
-
-                        <span>
-                            Forecasting
-                        </span>
-
-                    </div>
-
-                    <a href="#" class="project-link">
-                        Project Details
-                        <span>→</span>
-                    </a>
-
-                </div>
-
-            </article>
-
-        </section>
-
-
-        <!-- =========================
-             CONTACT
-        ========================== -->
-
-        <section class="section contact-section" id="contact">
-
-            <div class="section-heading reveal">
-
-                <p>GET IN TOUCH</p>
-
-                <h2>
-                    Let's <span>Connect</span>
-                </h2>
-
-            </div>
-
-            <div class="contact-grid">
-
-                <div class="contact-content reveal">
-
-                    <span class="section-number">
-                        06 / CONTACT
-                    </span>
-
-                    <h3>
-                        Have an idea?
-                        Let's talk.
-                    </h3>
-
-                    <p>
-                        I'm interested in learning, collaborating
-                        on projects and connecting with people who
-                        are passionate about technology.
-                    </p>
-
-                    <div class="contact-socials">
-
-                        <a
-                            href="https://github.com/saisrikar54"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            <span>GitHub</span>
-                            <b>↗</b>
-                        </a>
-
-                        <a
-                            href="https://www.linkedin.com/in/saisrikar-cheruku-355284367"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            <span>LinkedIn</span>
-                            <b>↗</b>
-                        </a>
-
-                    </div>
-
-                </div>
-
-
-                <div class="contact-card reveal">
-
-                    <div class="contact-row">
-
-                        <div class="contact-symbol">
-                            📱
-                        </div>
-
-                        <div>
-                            <small>Phone</small>
-                            <p>9848555094</p>
-                        </div>
-
-                    </div>
-
-
-                    <div class="contact-row">
-
-                        <div class="contact-symbol">
-                            💻
-                        </div>
-
-                        <div>
-                            <small>GitHub</small>
-                            <p>saisrikar54</p>
-                        </div>
-
-                    </div>
-
-
-                    <div class="contact-row">
-
-                        <div class="contact-symbol">
-                            🔗
-                        </div>
-
-                        <div>
-                            <small>LinkedIn</small>
-                            <p>Sai Srikar Cheruku</p>
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-    <!-- =========================
-         FOOTER
-    ========================== -->
-
-    <footer>
-
-        <div class="footer-inner">
-
-            <div>
-                <a href="#home" class="footer-logo">
-                    Sai<span>.</span>
+            <h1>
+                Sai Srikar
+                <span>Cheruku</span>
+            </h1>
+
+            <h2>
+                B.Tech Student & Aspiring Software Developer
+            </h2>
+
+            <p>
+                I am a passionate B.Tech student interested in
+                programming, web development and emerging
+                technologies. I enjoy learning new skills,
+                building projects and solving real-world
+                problems using technology.
+            </p>
+
+            <div class="buttons">
+
+                <a href="#projects" class="button primary">
+                    View My Work
                 </a>
 
-                <p>
-                    Learning. Building. Growing.
-                </p>
-            </div>
-
-            <div class="footer-right">
-
-                <p>
-                    © <span id="year"></span>
-                    Sai Srikar Cheruku
-                </p>
-
-                <a href="#home">
-                    Back to top ↑
+                <a
+                    href="https://github.com/saisrikar54"
+                    target="_blank"
+                    class="button secondary"
+                >
+                    GitHub
                 </a>
 
             </div>
 
         </div>
 
+
+        <div class="profile">
+
+            <div class="avatar">
+                SC
+            </div>
+
+            <h3>
+                Sai Srikar Cheruku
+            </h3>
+
+            <p>
+                Java • C • Python • HTML • CSS
+            </p>
+
+            <p>
+                B.Tech Student
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section id="about">
+
+        <div class="section-title">
+
+            <small>01 / ABOUT ME</small>
+
+            <h2>
+                About <span>Me</span>
+            </h2>
+
+        </div>
+
+        <div class="about">
+
+            <p>
+                I am Sai Srikar Cheruku, currently pursuing
+                B.Tech at Malla Reddy College of Engineering.
+            </p>
+
+            <p>
+                I have a strong interest in programming,
+                software development and web technologies.
+                I work with Java, C, Python, HTML and CSS.
+            </p>
+
+            <p>
+                I believe in learning through practical
+                experience, workshops, competitions and
+                real-world projects.
+            </p>
+
+            <p>
+                My goal is to become a skilled software
+                developer and build useful technology
+                solutions.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- SKILLS -->
+
+    <section class="dark" id="skills">
+
+        <div class="section-title">
+
+            <small>02 / TECHNICAL SKILLS</small>
+
+            <h2>
+                My <span>Skills</span>
+            </h2>
+
+        </div>
+
+        <div class="skills">
+
+            <div class="skill">
+                <h3>Java</h3>
+                <p>Object-Oriented Programming</p>
+            </div>
+
+            <div class="skill">
+                <h3>C</h3>
+                <p>Programming & Problem Solving</p>
+            </div>
+
+            <div class="skill">
+                <h3>Python</h3>
+                <p>Programming & Automation</p>
+            </div>
+
+            <div class="skill">
+                <h3>HTML</h3>
+                <p>Web Page Development</p>
+            </div>
+
+            <div class="skill">
+                <h3>CSS</h3>
+                <p>Responsive Web Design</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- EDUCATION -->
+
+    <section id="education">
+
+        <div class="section-title">
+
+            <small>03 / ACADEMIC JOURNEY</small>
+
+            <h2>
+                Education
+            </h2>
+
+        </div>
+
+        <div class="education">
+
+            <div class="education-card">
+
+                <span>10th STANDARD</span>
+
+                <h3>
+                    Sri Chaitanya
+                </h3>
+
+                <p>
+                    Completed my secondary education at
+                    Sri Chaitanya.
+                </p>
+
+            </div>
+
+
+            <div class="education-card">
+
+                <span>INTERMEDIATE</span>
+
+                <h3>
+                    Sri Chaitanya Junior College
+                </h3>
+
+                <p>
+                    Completed my intermediate education at
+                    Sri Chaitanya Junior College.
+                </p>
+
+            </div>
+
+
+            <div class="education-card">
+
+                <span>CURRENTLY PURSUING</span>
+
+                <h3>
+                    B.Tech — Malla Reddy College of Engineering
+                </h3>
+
+                <p>
+                    Currently pursuing B.Tech and developing
+                    my programming and software development skills.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ACHIEVEMENTS -->
+
+    <section class="dark" id="achievements">
+
+        <div class="section-title">
+
+            <small>04 / ACHIEVEMENT</small>
+
+            <h2>
+                My <span>Achievement</span>
+            </h2>
+
+        </div>
+
+        <div class="achievement">
+
+            <h3>
+                🏆 SIH 2026 — Internal Winner
+            </h3>
+
+            <p>
+                Won the Smart India Hackathon internal
+                competition at Malla Reddy College of
+                Engineering in 2026.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- WORKSHOPS -->
+
+    <section>
+
+        <div class="section-title">
+
+            <small>05 / LEARNING & DEVELOPMENT</small>
+
+            <h2>
+                Workshops
+            </h2>
+
+        </div>
+
+        <div class="workshops">
+
+            <div class="workshop">
+
+                <h3>
+                    GitHub Workshop
+                </h3>
+
+                <p>
+                    Completed a GitHub workshop in college
+                    and learned the fundamentals of Git,
+                    GitHub and version control.
+                </p>
+
+            </div>
+
+
+            <div class="workshop">
+
+                <h3>
+                    Workshop Carnival
+                </h3>
+
+                <p>
+                    Attended Workshop Carnival to explore
+                    technical concepts, gain practical
+                    knowledge and connect with others.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROJECT -->
+
+    <section class="dark" id="projects">
+
+        <div class="section-title">
+
+            <small>06 / FEATURED PROJECT</small>
+
+            <h2>
+                My <span>Project</span>
+            </h2>
+
+        </div>
+
+        <div class="project">
+
+            <div class="project-label">
+                SIH 2026
+            </div>
+
+            <h3>
+                FASALFORECAST
+            </h3>
+
+            <p>
+                FASALFORECAST is a localized agricultural
+                weather forecasting solution designed to
+                provide farmers with useful weather insights,
+                crop-specific risks and weather-based
+                advisories.
+            </p>
+
+            <div class="features">
+
+                <span>Panchayat-Level Forecasting</span>
+
+                <span>Localized Weather Monitoring</span>
+
+                <span>Farmer Alerts</span>
+
+                <span>Crop Risk Analysis</span>
+
+                <span>Weather Advisory</span>
+
+                <span>Forecast Confidence</span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section id="contact">
+
+        <div class="section-title">
+
+            <small>07 / GET IN TOUCH</small>
+
+            <h2>
+                Let's <span>Connect</span>
+            </h2>
+
+        </div>
+
+        <div class="contact">
+
+            <div class="contact-card">
+
+                <h3>
+                    GitHub
+                </h3>
+
+                <p>
+                    Check out my projects and coding work.
+                </p>
+
+                <a
+                    class="contact-link"
+                    href="https://github.com/saisrikar54"
+                    target="_blank"
+                >
+                    github.com/saisrikar54
+                </a>
+
+            </div>
+
+
+            <div class="contact-card">
+
+                <h3>
+                    LinkedIn
+                </h3>
+
+                <p>
+                    Connect with me professionally.
+                </p>
+
+                <a
+                    class="contact-link"
+                    href="https://www.linkedin.com/in/sai-srikar-cheruku-355284367"
+                    target="_blank"
+                >
+                    LinkedIn Profile
+                </a>
+
+            </div>
+
+
+            <div class="contact-card">
+
+                <h3>
+                    Phone
+                </h3>
+
+                <p>
+                    You can contact me directly.
+                </p>
+
+                <a
+                    class="contact-link"
+                    href="tel:9848555094"
+                >
+                    9848555094
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2026
+            <strong>Sai Srikar Cheruku</strong>
+            — Learning • Building • Growing
+        </p>
+
     </footer>
-
-
-    <script src="script.js"></script>
 
 </body>
 </html>
-```
